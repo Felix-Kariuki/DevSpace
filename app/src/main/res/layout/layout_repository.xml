@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minWidth="230dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivRepoOwner"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvRepoUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felix-Kariuki"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@+id/ivRepoOwner"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRepoOwner"
+            app:layout_constraintStart_toEndOf="@+id/ivRepoOwner"/>
+
+        <TextView
+            android:id="@+id/tvRepoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yummy"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/ivRepoOwner"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvRepoDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="Yummy is a food application built with"
+            android:maxLines="1"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepoName"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDescription"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvRepoStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:layout_marginStart="10dp"
+            android:maxLines="1"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/image1"
+            app:layout_constraintStart_toEndOf="@id/image1"
+            app:layout_constraintBottom_toBottomOf="@id/image1"/>
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/dot"
+            app:layout_constraintTop_toTopOf="@+id/image1"
+            app:layout_constraintStart_toEndOf="@id/tvRepoStar"
+            app:layout_constraintBottom_toBottomOf="@id/image1"/>
+
+        <TextView
+            android:id="@+id/tvRepoLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kotlin"
+            android:layout_marginStart="10dp"
+            android:maxLines="1"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/image1"
+            app:layout_constraintStart_toEndOf="@id/image2"
+            app:layout_constraintBottom_toBottomOf="@id/image1"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

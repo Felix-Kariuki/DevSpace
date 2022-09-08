@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/wakatimeFragment"
+        android:icon="@drawable/ic_wakatime"
+        android:title="WakaTime" />
+
+    <item
+        android:id="@+id/quotesFragment"
+        android:icon="@drawable/ic_quotes"
+        android:title="Quotes" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/github"
+        android:title="Github" />
+
+
+
+</menu>

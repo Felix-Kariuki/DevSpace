@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/drawable-v24/ic_search.xml" value="0.1" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/drawable/dot.xml" value="0.142" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/drawable/github.xml" value="0.1455" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/drawable/ic_twitter.xml" value="0.1455" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_followers.xml" value="0.2" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_following.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_quotes.xml" value="0.264" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_wakatime.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/fragment_web_view.xml" value="0.24615384615384617" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/layout_editor.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/layout_followers.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/layout_repository.xml" value="0.264" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/layout/quote_item.xml" value="0.1" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.24615384615384617" />
+        <entry key="..\:/ANDROID/2 WORK/Github_Tests/app/src/main/res/menu/navigation_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

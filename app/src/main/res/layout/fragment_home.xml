@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".github.presentation.fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_settings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_share"
+                app:layout_constraintEnd_toStartOf="@+id/ivSettings"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserProfile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivSettings" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Felix Kariuki"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
+                app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+
+            <TextView
+                android:id="@+id/tvUserNmae"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Felix-Kariuki"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
+                app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+            <TextView
+                android:id="@+id/tvBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Native Android Engineer"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivUserProfile" />
+
+            <ImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBio" />
+
+            <TextView
+                android:id="@+id/tvlocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Nairobi,Kenya"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivLocation"
+                app:layout_constraintStart_toEndOf="@+id/ivLocation"
+                app:layout_constraintTop_toTopOf="@+id/ivLocation" />
+
+            <ImageView
+                android:id="@+id/ivLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_link"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLocation" />
+
+            <TextView
+                android:id="@+id/tvlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="https://felixkariuki.netlify.app"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivLink"
+                app:layout_constraintStart_toEndOf="@+id/ivLink"
+                app:layout_constraintTop_toTopOf="@+id/ivLink" />
+
+            <ImageView
+                android:id="@+id/ivEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/ic_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLink"
+                app:tint="@color/iconBlack" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="felixmurimi280@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivEmail"
+                app:layout_constraintStart_toEndOf="@+id/ivEmail"
+                app:layout_constraintTop_toTopOf="@+id/ivEmail" />
+
+            <ImageView
+                android:id="@+id/ivTwitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_twitter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivEmail" />
+
+            <TextView
+                android:id="@+id/twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="felixkariuki_"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivTwitter"
+                app:layout_constraintStart_toEndOf="@+id/ivTwitter"
+                app:layout_constraintTop_toTopOf="@+id/ivTwitter" />
+
+            <ImageView
+                android:id="@+id/ivFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_person"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivTwitter" />
+
+            <TextView
+                android:id="@+id/tvFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="42"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivFollowers"
+                app:layout_constraintStart_toEndOf="@+id/ivFollowers"
+                app:layout_constraintTop_toTopOf="@+id/ivFollowers" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="followers"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivFollowers"
+                app:layout_constraintStart_toEndOf="@+id/tvFollowers"
+                app:layout_constraintTop_toTopOf="@+id/ivFollowers" />
+
+            <ImageView
+                android:id="@+id/ivDot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/dot"
+                app:layout_constraintBottom_toBottomOf="@id/ivFollowers"
+                app:layout_constraintStart_toEndOf="@+id/textView1"
+                app:layout_constraintTop_toTopOf="@+id/ivFollowers" />
+
+            <TextView
+                android:id="@+id/tvFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="36"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivFollowers"
+                app:layout_constraintStart_toEndOf="@+id/ivDot"
+                app:layout_constraintTop_toTopOf="@+id/ivFollowers" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="following"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivFollowers"
+                app:layout_constraintStart_toEndOf="@+id/tvFollowing"
+                app:layout_constraintTop_toTopOf="@+id/ivFollowers" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutOne">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repos"
+                android:layout_margin="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/reposRecyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reposRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/layout_repository"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                />
+
+
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_file"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reposRecyclerView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repositories"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv1"
+                app:layout_constraintBottom_toBottomOf="@+id/iv1"
+                app:layout_constraintStart_toEndOf="@+id/iv1"/>
+
+            <TextView
+                android:id="@+id/tvRepositories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="117"
+                android:textSize="18sp"
+                android:layout_marginEnd="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv1"
+                app:layout_constraintBottom_toBottomOf="@+id/iv1"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_organization"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organizations"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv2"
+                app:layout_constraintBottom_toBottomOf="@+id/iv2"
+                app:layout_constraintStart_toEndOf="@+id/iv2"/>
+
+            <TextView
+                android:id="@+id/tvOrganizations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="18sp"
+                android:layout_marginEnd="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv2"
+                app:layout_constraintBottom_toBottomOf="@+id/iv2"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                app:tint="@color/iconBlack"
+                android:src="@drawable/ic_star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stars"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv3"
+                app:layout_constraintBottom_toBottomOf="@+id/iv3"
+                app:layout_constraintStart_toEndOf="@+id/iv3"/>
+
+            <TextView
+                android:id="@+id/tvStarred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="67"
+                android:textSize="18sp"
+                android:layout_marginEnd="15dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@+id/iv3"
+                app:layout_constraintBottom_toBottomOf="@+id/iv3"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

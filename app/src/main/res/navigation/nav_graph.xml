@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wakatimeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.flexcode.devspace.github.presentation.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_followersFragment"
+            app:destination="@id/followersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_followingFragment"
+            app:destination="@id/followingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/followersFragment"
+        android:name="com.flexcode.devspace.github.presentation.fragments.FollowersFragment"
+        android:label="fragment_followers"
+        tools:layout="@layout/fragment_followers" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.flexcode.devspace.github.presentation.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/followingFragment"
+        android:name="com.flexcode.devspace.github.presentation.fragments.FollowingFragment"
+        android:label="fragment_following"
+        tools:layout="@layout/fragment_following" />
+    <fragment
+        android:id="@+id/wakatimeFragment"
+        android:name="com.flexcode.devspace.wakatime.presentation.fragments.WakatimeFragment"
+        android:label="fragment_wakatime"
+        tools:layout="@layout/fragment_wakatime" >
+        <action
+            android:id="@+id/action_wakatimeFragment_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_wakatimeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotesFragment"
+        android:name="com.flexcode.devspace.quotes.presentation.fragments.QuotesFragment"
+        android:label="fragment_quotes"
+        tools:layout="@layout/fragment_quotes" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.flexcode.devspace.github.presentation.fragments.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="webLink"
+            app:argType="string" />
+    </fragment>
+</navigation>

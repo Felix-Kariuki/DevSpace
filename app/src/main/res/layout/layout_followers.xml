@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"
+    android:layout_marginStart="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivFollowerImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_placeholder"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvFollowerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Felix Kariuki"
+        android:layout_marginStart="15dp"
+        android:visibility="gone"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/ivFollowerImage"
+        app:layout_constraintTop_toTopOf="@+id/ivFollowerImage"/>
+
+    <TextView
+        android:id="@+id/tvFollowerUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginStart="15dp"
+        android:text="Felix-Kariuki"
+        app:layout_constraintTop_toTopOf="@+id/ivFollowerImage"
+        app:layout_constraintStart_toEndOf="@id/ivFollowerImage"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFollowerImage"/>
+
+    <TextView
+        android:id="@+id/tvFollowerBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:visibility="gone"
+        android:ellipsize="end"
+        android:layout_marginStart="15dp"
+        android:text="A native android Engineer"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFollowerImage"
+        app:layout_constraintStart_toEndOf="@id/ivFollowerImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvFollowerUserName"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
