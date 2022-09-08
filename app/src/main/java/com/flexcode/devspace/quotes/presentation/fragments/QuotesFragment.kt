@@ -68,6 +68,7 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes) {
             quotesViewModel.getAllQuotes().collect { result ->
                 when(result){
                     is Resource.Success -> {
+                        result.data?.let { quotesList.addAll(it) }
                         quotesAdapter.submitList(result.data)
                         binding.apply {
                             rvQuotes.isVisible = true
