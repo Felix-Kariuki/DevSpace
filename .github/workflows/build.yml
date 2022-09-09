@@ -3,6 +3,8 @@ name: Build
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
 
@@ -21,14 +23,15 @@ jobs:
         with:
           java-version: '11'
 
-      # Allow permissions to make gradle executable - This can removed by adding the gradlew file permission
-      # directly into the repository using `git update-index --chmod=+x gradlew`
-       - name: Make gradle executable
-        run: chmod +x ./gradlew
-
 
       - name: Build with gradle
         run: ./gradlew build --stacktrace
+
+      - name: Run Testts
+        run: ./gradlew test
+
+      - name: Build Project
+        run: ./gradlew assemble
 
   lint-check:
     name: 🔍 Lint
