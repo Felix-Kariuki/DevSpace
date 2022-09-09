@@ -31,6 +31,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+            ignoreWarnings = true
+        }
     }
     buildFeatures {
         viewBinding true
