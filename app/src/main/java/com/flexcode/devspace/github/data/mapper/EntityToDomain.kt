@@ -2,6 +2,7 @@ package com.flexcode.devspace.github.data.mapper
 
 import com.flexcode.devspace.github.data.local.entities.*
 import com.flexcode.devspace.github.domain.model.*
+import kotlin.math.log
 
 internal fun UserEntity.toDomain(): User {
     return User(
@@ -57,6 +58,7 @@ internal fun RepositoryEntity.toDomain(): Repository {
 
 internal fun OwnerEntity.toDomain(): Owner {
     return Owner(
-        avatar_url = avatar_url
+        avatar_url = avatar_url,
+        login = login,
     )
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/wakatimeFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -32,7 +32,11 @@
         android:id="@+id/settingsFragment"
         android:name="com.flexcode.devspace.github.presentation.fragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/followingFragment"
         android:name="com.flexcode.devspace.github.presentation.fragments.FollowingFragment"
@@ -63,5 +67,14 @@
         <argument
             android:name="webLink"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.flexcode.devspace.core.fragments.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_wakatimeFragment"
+            app:destination="@id/wakatimeFragment" />
     </fragment>
 </navigation>

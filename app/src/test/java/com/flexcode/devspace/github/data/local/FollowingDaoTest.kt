@@ -5,8 +5,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.filters.SmallTest
-import com.flexcode.devspace.github.data.entities.fakeFollowingEntity
 import com.flexcode.devspace.github.data.local.dao.FollowingDao
+import com.flexcode.devspace.github.data.local.entities.FollowingEntity
 import com.google.common.truth.Truth
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -62,3 +62,12 @@ class FollowingDaoTest {
         Truth.assertThat(followers).isEmpty()
     }
 }
+
+val fakeFollowingEntity =
+    listOf(
+        FollowingEntity(
+            avatar_url = "https://avatars.githubusercontent.com/u/17609923?v=4",
+            id = 17609923,
+            login = "mancini85"
+        )
+    )

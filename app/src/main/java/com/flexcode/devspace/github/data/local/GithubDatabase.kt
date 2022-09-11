@@ -11,7 +11,7 @@ import com.flexcode.devspace.github.data.local.entities.*
 @Database(
     entities = [
         UserEntity::class,FollowersEntity::class,FollowingEntity::class,RepositoryEntity::class
-    ], version = 6, exportSchema = false
+    ], version = 7, exportSchema = false
 )
 abstract class GithubDatabase : RoomDatabase() {
 

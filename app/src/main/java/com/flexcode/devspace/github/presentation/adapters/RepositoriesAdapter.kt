@@ -1,5 +1,6 @@
 package com.flexcode.devspace.github.presentation.adapters
 
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -7,21 +8,19 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.flexcode.devspace.R
+import com.flexcode.devspace.core.utils.Constants
 import com.flexcode.devspace.databinding.LayoutRepositoryBinding
 import com.flexcode.devspace.github.domain.model.Repository
+import javax.inject.Inject
 
 class RepositoriesAdapter(private val onClickListener  : OnClickListener) :
     ListAdapter<Repository,RepositoriesAdapter.MyViewHolder>(COMPARATOR){
+
 
         inner class MyViewHolder(private val binding : LayoutRepositoryBinding) :
                 RecyclerView.ViewHolder(binding.root){
                     fun bind(repo:Repository?){
                         binding.apply {
-//                            ivRepoOwner.load(repo?.owner?.avatar_url){
-//                                placeholder(R.drawable.ic_placeholder)
-//                                crossfade(true)
-//                                transformations(CircleCropTransformation())
-//                            }
                             Glide.with(binding.root)
                                 .load(repo?.owner?.avatar_url)
                                 .placeholder(R.drawable.ic_placeholder)
@@ -31,6 +30,7 @@ class RepositoriesAdapter(private val onClickListener  : OnClickListener) :
                             tvRepoName.text = repo?.name
                             tvRepoLanguage.text = repo?.language
                             tvRepoStar.text = repo?.stargazers_count.toString()
+                            tvRepoUserName.text = repo?.owner?.login
                             /**
                              * get login to owner to display as name
                              */

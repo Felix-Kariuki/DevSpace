@@ -12,13 +12,25 @@
         android:layout_height="match_parent"
         android:layout_marginStart="15dp">
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -26,10 +38,10 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_settings"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/iconBlack" />
 
 
             <ImageView
@@ -37,10 +49,10 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_share"
                 app:layout_constraintEnd_toStartOf="@+id/ivSettings"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/iconBlack" />
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -90,10 +102,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_location"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvBio" />
+                app:layout_constraintTop_toBottomOf="@id/tvBio"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:id="@+id/tvlocation"
@@ -112,10 +124,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_link"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivLocation" />
+                app:layout_constraintTop_toBottomOf="@id/ivLocation"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:id="@+id/tvlink"
@@ -158,10 +170,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_twitter"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivEmail" />
+                app:layout_constraintTop_toBottomOf="@id/ivEmail"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:id="@+id/twitter"
@@ -181,10 +193,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_person"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivTwitter" />
+                app:layout_constraintTop_toBottomOf="@id/ivTwitter"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:id="@+id/tvFollowers"
@@ -249,19 +261,20 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutOne">
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Repos"
                 android:layout_margin="10dp"
+                android:text="Repos"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/reposRecyclerView"
@@ -273,13 +286,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                tools:listitem="@layout/layout_repository"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6"
-                />
-
+                tools:listitem="@layout/layout_repository" />
 
 
             <ImageView
@@ -287,33 +298,33 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_file"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/reposRecyclerView"/>
+                app:layout_constraintTop_toBottomOf="@+id/reposRecyclerView"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Repositories"
-                android:textSize="18sp"
                 android:layout_marginStart="10dp"
+                android:text="Repositories"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv1"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv1"
-                app:layout_constraintStart_toEndOf="@+id/iv1"/>
+                app:layout_constraintStart_toEndOf="@+id/iv1"
+                app:layout_constraintTop_toTopOf="@+id/iv1" />
 
             <TextView
                 android:id="@+id/tvRepositories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="117"
-                android:textSize="18sp"
                 android:layout_marginEnd="15dp"
+                android:text="117"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv1"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv1"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv1" />
 
 
             <ImageView
@@ -321,33 +332,33 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_organization"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv1"/>
+                app:layout_constraintTop_toBottomOf="@+id/iv1"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Organizations"
-                android:textSize="18sp"
                 android:layout_marginStart="10dp"
+                android:text="Organizations"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv2"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv2"
-                app:layout_constraintStart_toEndOf="@+id/iv2"/>
+                app:layout_constraintStart_toEndOf="@+id/iv2"
+                app:layout_constraintTop_toTopOf="@+id/iv2" />
 
             <TextView
                 android:id="@+id/tvOrganizations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2"
-                android:textSize="18sp"
                 android:layout_marginEnd="15dp"
+                android:text="2"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv2"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv2"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv2" />
 
 
             <ImageView
@@ -355,34 +366,33 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="10dp"
-                app:tint="@color/iconBlack"
                 android:src="@drawable/ic_star"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv2"/>
+                app:layout_constraintTop_toBottomOf="@+id/iv2"
+                app:tint="@color/iconBlack" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stars"
-                android:textSize="18sp"
                 android:layout_marginStart="10dp"
+                android:text="Stars"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv3"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv3"
-                app:layout_constraintStart_toEndOf="@+id/iv3"/>
+                app:layout_constraintStart_toEndOf="@+id/iv3"
+                app:layout_constraintTop_toTopOf="@+id/iv3" />
 
             <TextView
                 android:id="@+id/tvStarred"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="67"
-                android:textSize="18sp"
                 android:layout_marginEnd="15dp"
+                android:text="67"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@+id/iv3"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv3"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv3" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.filters.SmallTest
-import com.flexcode.devspace.quotes.data.entity.fakeQuotesEntity
 import com.flexcode.devspace.quotes.data.local.dao.QuotesDao
+import com.flexcode.devspace.quotes.data.local.entity.QuotesEntity
 import com.google.common.truth.Truth
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -63,3 +63,11 @@ class QuotesDaoTest {
     }
 
 }
+
+val fakeQuotesEntity = listOf(
+    QuotesEntity(
+        author = "Felix",
+        en = "If it works don't touch it",
+        id = "5555"
+    )
+)

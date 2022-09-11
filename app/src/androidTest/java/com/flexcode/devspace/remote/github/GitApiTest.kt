@@ -65,7 +65,7 @@ class GitApiTest {
     }
 
     @Test
-    fun testGithubApi(): Unit = runBlocking {
+    fun testGitApi(): Unit = runBlocking {
         val data = api.getUser(username = "Felix-Kariuki")
         ViewMatchers.assertThat(data.login, CoreMatchers.equalTo("Felix-Kariuki"))
     }
