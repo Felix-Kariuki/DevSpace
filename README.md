@@ -31,17 +31,17 @@ The domain layer is responsible for encapsulating complex business logic, or sim
  
    * Light
    
-   <img src="./screenshots/welcome-light.png" width="280">&emsp;
-<img src="./screenshots/settings-light.png" width="280">&emsp;
-<img src="./screenshots/wakatime-light.png" width="280">&emsp;
+   <img src="./screenshots/welcome-light.png" width="240">&emsp;
+<img src="./screenshots/settings-light.png" width="240">&emsp;
+<img src="./screenshots/wakatime-light.png" width="240">&emsp;
 <img src="./screenshots/details_dark_alternate.png" width="320">
     
     
   * Dark
   
-  <img src="./screenshots/welcome.png" width="280">&emsp;
-<img src="./screenshots/settings.png" width="280">&emsp;
-<img src="./screenshots/wakatime.png" width="280">&emsp;
+  <img src="./screenshots/welcome.png" >&emsp;
+<img src="./screenshots/settings.png" >&emsp;
+<img src="./screenshots/wakatime.png">&emsp;
 <img src="./screenshots/details_dark_alternate.png" width="320">
 
 
