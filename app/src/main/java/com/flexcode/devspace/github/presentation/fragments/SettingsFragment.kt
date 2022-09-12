@@ -36,6 +36,7 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         clickListeners()
+        checkTheme()
     }
 
     private fun clickListeners() {
@@ -80,6 +81,25 @@ class SettingsFragment : Fragment() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME,true).apply()
         sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME,false).apply()
+    }
+
+    private fun checkTheme(){
+        if (sharedPref.getBoolean(Constants.KEY_DARK_THEME, true)) {
+            binding.apply {
+                RadioDarkTheme.isChecked = true
+                tvSelectedTheme.text = "Dark"
+            }
+        } else if (sharedPref.getBoolean(Constants.KEY_LIGHT_THEME, true)) {
+            binding.apply {
+                RadioLightTheme.isChecked
+                tvSelectedTheme.text = "Light"
+            }
+        } else {
+            binding.apply {
+                RadioSystemTheme.isChecked = true
+                tvSelectedTheme.text = "System"
+            }
+        }
     }
 
     private fun navigateToWelcomeScreen() {
