@@ -6,14 +6,16 @@
     android:layout_marginStart="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivFollowerImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_placeholder"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_placeholder"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        />
 
     <TextView
         android:id="@+id/tvFollowerName"
