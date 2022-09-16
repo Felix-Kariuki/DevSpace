@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.flexcode.devspace.R
@@ -38,6 +39,7 @@ class WakatimeFragment : Fragment(R.layout.fragment_wakatime) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getEditors()
+        exitApp()
     }
 
     private fun getEditors() {
@@ -60,6 +62,18 @@ class WakatimeFragment : Fragment(R.layout.fragment_wakatime) {
                 }
             }
         }
+    }
+
+    private fun exitApp() {
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            onBackPressedCallback
+        )
     }
 
     override fun onDestroy() {
