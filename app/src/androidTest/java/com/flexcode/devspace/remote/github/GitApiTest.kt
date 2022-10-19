@@ -5,6 +5,8 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.platform.app.InstrumentationRegistry
 import com.flexcode.devspace.github.data.remote.GitApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import java.io.InputStream
+import java.net.HttpURLConnection
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -17,8 +19,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
-import java.io.InputStream
-import java.net.HttpURLConnection
 
 class GitApiTest {
 
@@ -38,7 +38,6 @@ class GitApiTest {
             .addInterceptor(interceptor)
             .build()
 
-
         val contentType = "application/json".toMediaType()
         val converterFactory = Json.asConverterFactory(contentType)
 
@@ -56,7 +55,6 @@ class GitApiTest {
             .setResponseCode(HttpURLConnection.HTTP_OK)
             .setBody(String(jsonBytes))
         mockWebServer.enqueue(response)
-
     }
 
     @After

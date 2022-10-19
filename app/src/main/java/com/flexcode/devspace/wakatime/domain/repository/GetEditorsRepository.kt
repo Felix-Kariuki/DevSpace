@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetEditorsRepository {
 
-    fun getEditors(token:String) : Flow<Resource<List<Editors>>>
+    fun getEditors(token: String): Flow<Resource<List<Editors>>>
 }

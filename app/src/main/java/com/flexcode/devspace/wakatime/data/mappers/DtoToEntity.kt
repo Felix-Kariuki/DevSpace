@@ -1,6 +1,5 @@
 package com.flexcode.devspace.wakatime.data.mappers
 
-import androidx.room.PrimaryKey
 import com.flexcode.devspace.wakatime.data.local.entities.EditorsEntity
 import com.flexcode.devspace.wakatime.data.remote.dto.EditorsDto
 

@@ -1,12 +1,12 @@
 package com.flexcode.devspace.quotes.presentation.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.flexcode.devspace.R
@@ -23,39 +23,38 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes) {
 
     private var _binding: FragmentQuotesBinding? = null
     private val binding get() = _binding!!
-    private val quotesViewModel : QuotesViewModel by viewModels()
+    private val quotesViewModel: QuotesViewModel by viewModels()
     private lateinit var quotesAdapter: QuotesAdapter
     lateinit var quotesList: ArrayList<Quotes>
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentQuotesBinding.inflate(inflater,container,false)
+        _binding = FragmentQuotesBinding.inflate(inflater, container, false)
 
-        quotesAdapter = QuotesAdapter(QuotesAdapter.OnClickListener{
-            /**
-             *onclick action
-             */
-        })
-
+        quotesAdapter = QuotesAdapter(
+            QuotesAdapter.OnClickListener {
+                /**
+                 *onclick action
+                 */
+            }
+        )
 
         quotesList = ArrayList()
 
         return binding.root
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getQuotes()
         searchQuotes()
-
     }
 
     private fun searchQuotes() {
-        binding.searchView.setEndIconOnClickListener{
+        binding.searchView.setEndIconOnClickListener {
             val searchItem = binding.etSearchQuote.text.toString().trim()
             val results = quotesList.filter { it.en.contains(searchItem) }
             quotesAdapter.submitList(results)
@@ -66,7 +65,7 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes) {
     private fun getQuotes() {
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             quotesViewModel.getAllQuotes().collect { result ->
-                when(result){
+                when (result) {
                     is Resource.Success -> {
                         result.data?.let { quotesList.addAll(it) }
                         quotesAdapter.submitList(result.data)
@@ -97,5 +96,4 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes) {
         super.onDestroy()
         _binding = null
     }
-
 }

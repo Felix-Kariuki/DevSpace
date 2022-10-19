@@ -9,7 +9,7 @@ class GetEditorsUseCase(
     private val repository: GetEditorsRepository
 ) {
 
-    operator fun invoke(token: String): Flow<Resource<List<Editors>>>{
+    operator fun invoke(token: String): Flow<Resource<List<Editors>>> {
         return repository.getEditors(token)
     }
 }

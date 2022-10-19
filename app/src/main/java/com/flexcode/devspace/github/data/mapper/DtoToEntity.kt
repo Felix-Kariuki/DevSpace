@@ -2,7 +2,6 @@ package com.flexcode.devspace.github.data.mapper
 
 import com.flexcode.devspace.github.data.local.entities.*
 import com.flexcode.devspace.github.data.remote.dto.*
-import kotlin.math.log
 
 internal fun UserDto.toEntity(): UserEntity {
 
@@ -21,7 +20,6 @@ internal fun UserDto.toEntity(): UserEntity {
         twitter_username = twitter_username,
         url = url
     )
-
 }
 
 internal fun FollowersDto.toEntity(): FollowersEntity {
@@ -50,7 +48,7 @@ internal fun RepositoryDto.toEntity(): RepositoryEntity {
         language = language,
         name = name,
         open_issues = open_issues,
-        owner  = owner?.toEntity(),
+        owner = owner?.toEntity(),
         size = size,
         stargazers_count = stargazers_count,
         updated_at = updated_at,

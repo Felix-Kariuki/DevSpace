@@ -8,6 +8,7 @@ import androidx.test.filters.SmallTest
 import com.flexcode.devspace.github.data.local.dao.FollowersDao
 import com.flexcode.devspace.github.data.local.entities.FollowersEntity
 import com.google.common.truth.Truth
+import java.io.IOException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -16,23 +17,22 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import java.io.IOException
 
 @RunWith(RobolectricTestRunner::class)
 @SmallTest
 @OptIn(ExperimentalCoroutinesApi::class)
 class FollowersDaoTest {
 
-    private lateinit var db : GithubDatabase
+    private lateinit var db: GithubDatabase
     private lateinit var dao: FollowersDao
 
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
     @Before
-    fun setUp(){
+    fun setUp() {
         val context = ApplicationProvider.getApplicationContext<Context>()
-        db = Room.inMemoryDatabaseBuilder(context,GithubDatabase::class.java)
+        db = Room.inMemoryDatabaseBuilder(context, GithubDatabase::class.java)
             .allowMainThreadQueries()
             .build()
         dao = db.followersDao

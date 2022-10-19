@@ -9,6 +9,7 @@ import com.flexcode.devspace.github.data.local.dao.RepositoryDao
 import com.flexcode.devspace.github.data.local.entities.OwnerEntity
 import com.flexcode.devspace.github.data.local.entities.RepositoryEntity
 import com.google.common.truth.Truth
+import java.io.IOException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -17,7 +18,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import java.io.IOException
 
 @RunWith(RobolectricTestRunner::class)
 @SmallTest

@@ -10,12 +10,11 @@ import com.flexcode.devspace.quotes.domain.models.Quotes
 
 class QuotesAdapter(
     private val onClickListener: OnClickListener
-) : ListAdapter<Quotes,QuotesAdapter.MyViewHolder>(COMPARATOR){
+) : ListAdapter<Quotes, QuotesAdapter.MyViewHolder>(COMPARATOR) {
 
-
-    inner class MyViewHolder(private val binding: QuoteItemBinding):
-    RecyclerView.ViewHolder(binding.root){
-        fun bind(quotes: Quotes){
+    inner class MyViewHolder(private val binding: QuoteItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(quotes: Quotes) {
             binding.tvAuthor.text = quotes.author
             binding.tvQuote.text = quotes.en
         }
@@ -48,7 +47,6 @@ class QuotesAdapter(
             override fun areContentsTheSame(oldItem: Quotes, newItem: Quotes): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 

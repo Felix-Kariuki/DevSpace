@@ -9,11 +9,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Singleton
 import dagger.hilt.components.SingletonComponent
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -24,7 +24,6 @@ object AppModule {
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
-
 
     @Provides
     @Singleton
@@ -44,13 +43,10 @@ object AppModule {
     fun providesSharedPreferences(@ApplicationContext app: Context) =
         app.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
-
     @Singleton
     @Provides
     fun providesGithubUserName(sharedPreferences: SharedPreferences) =
         sharedPreferences.getString(KEY_GITHUB_USERNAME, "empty")
-
-
 
     @Singleton
     @Provides

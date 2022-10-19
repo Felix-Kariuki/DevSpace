@@ -2,7 +2,6 @@ package com.flexcode.devspace.github.data.mapper
 
 import com.flexcode.devspace.github.data.local.entities.*
 import com.flexcode.devspace.github.domain.model.*
-import kotlin.math.log
 
 internal fun UserEntity.toDomain(): User {
     return User(

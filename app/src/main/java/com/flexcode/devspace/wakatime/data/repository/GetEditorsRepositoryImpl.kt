@@ -7,18 +7,18 @@ import com.flexcode.devspace.wakatime.data.mappers.toEntity
 import com.flexcode.devspace.wakatime.data.remote.WakatimeApi
 import com.flexcode.devspace.wakatime.domain.models.Editors
 import com.flexcode.devspace.wakatime.domain.repository.GetEditorsRepository
+import java.io.IOException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.HttpException
-import java.io.IOException
 
 class GetEditorsRepositoryImpl(
     private val api: WakatimeApi,
-    private val dao : EditorsDao
+    private val dao: EditorsDao
 ) : GetEditorsRepository {
-    override fun getEditors(token: String): Flow<Resource<List<Editors>>> = flow{
+    override fun getEditors(token: String): Flow<Resource<List<Editors>>> = flow {
 
         emit(Resource.Loading())
 
@@ -29,14 +29,14 @@ class GetEditorsRepositoryImpl(
             val remoteEditors = api.getEditors(token)
             dao.deleteEditors(remoteEditors.data.map { it?.repository })
             dao.insertEditors(remoteEditors.data.map { it?.toEntity() })
-        }catch (e: HttpException) {
+        } catch (e: HttpException) {
             emit(
                 Resource.Error(
                     message = "Something went wrong",
                     data = localEditors
                 )
             )
-        }catch (e: IOException){
+        } catch (e: IOException) {
             emit(
                 Resource.Error(
                     message = "ERROR!!, check your internet connection!",
@@ -47,8 +47,5 @@ class GetEditorsRepositoryImpl(
 
         val newEditors = dao.getEditors().map { it.toDomain() }
         emit(Resource.Success(newEditors))
-
-
-
     }.flowOn(Dispatchers.IO)
 }

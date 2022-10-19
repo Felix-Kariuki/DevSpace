@@ -21,7 +21,7 @@ interface GitApi {
     suspend fun getFollowers(
         @Path("user") username: String,
         @Header("Authorization") accessToken: String = BuildConfig.ACCESS_TOKEN
-    ):List<FollowersDto>
+    ): List<FollowersDto>
 
     @GET("/users/{user}/following")
     suspend fun getFollowing(

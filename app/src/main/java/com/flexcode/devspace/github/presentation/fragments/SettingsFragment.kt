@@ -2,12 +2,12 @@ package com.flexcode.devspace.github.presentation.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.flexcode.devspace.R
 import com.flexcode.devspace.core.utils.Constants
@@ -25,10 +25,11 @@ class SettingsFragment : Fragment() {
     lateinit var sharedPref: SharedPreferences
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSettingsBinding.inflate(inflater,container,false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -56,8 +57,8 @@ class SettingsFragment : Fragment() {
             RadioDarkTheme.isChecked = false
             RadioSystemTheme.isChecked = true
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME,false).apply()
-            sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME,false).apply()
+            sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME, false).apply()
+            sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME, false).apply()
         }
     }
 
@@ -68,8 +69,8 @@ class SettingsFragment : Fragment() {
             RadioSystemTheme.isChecked = false
         }
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME,true).apply()
-        sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME,false).apply()
+        sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME, true).apply()
+        sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME, false).apply()
     }
 
     private fun setLightTheme() {
@@ -79,11 +80,11 @@ class SettingsFragment : Fragment() {
             RadioSystemTheme.isChecked = false
         }
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME,true).apply()
-        sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME,false).apply()
+        sharedPref.edit().putBoolean(Constants.KEY_LIGHT_THEME, true).apply()
+        sharedPref.edit().putBoolean(Constants.KEY_DARK_THEME, false).apply()
     }
 
-    private fun checkTheme(){
+    private fun checkTheme() {
         if (sharedPref.getBoolean(Constants.KEY_DARK_THEME, true)) {
             binding.apply {
                 RadioDarkTheme.isChecked = true
@@ -103,7 +104,7 @@ class SettingsFragment : Fragment() {
     }
 
     private fun navigateToWelcomeScreen() {
-        sharedPref.edit().putString(Constants.KEY_GITHUB_USERNAME,"empty").apply()
+        sharedPref.edit().putString(Constants.KEY_GITHUB_USERNAME, "empty").apply()
         findNavController().navigate(R.id.action_settingsFragment_to_welcomeFragment)
     }
 

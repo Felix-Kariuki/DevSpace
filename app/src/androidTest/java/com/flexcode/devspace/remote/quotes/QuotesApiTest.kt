@@ -6,6 +6,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.flexcode.devspace.quotes.data.remote.QuotesApi
 import com.flexcode.devspace.quotes.data.remote.dto.QuotesDto
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import java.io.InputStream
+import java.net.HttpURLConnection
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -18,8 +20,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
-import java.io.InputStream
-import java.net.HttpURLConnection
 
 class QuotesApiTest {
 
@@ -37,7 +37,6 @@ class QuotesApiTest {
         val client = OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .build()
-
 
         val contentType = "application/json".toMediaType()
         val converterFactory = Json.asConverterFactory(contentType)
@@ -58,15 +57,14 @@ class QuotesApiTest {
         mockWebServer.enqueue(response)
     }
 
-
     @After
     fun tearDown() {
         mockWebServer.shutdown()
     }
 
     @Test
-    fun testQuotesApi() : Unit = runBlocking {
+    fun testQuotesApi(): Unit = runBlocking {
         val data = api.getAllQuotes()
-        ViewMatchers.assertThat(data,CoreMatchers.equalTo(QuotesDto))
+        ViewMatchers.assertThat(data, CoreMatchers.equalTo(QuotesDto))
     }
 }

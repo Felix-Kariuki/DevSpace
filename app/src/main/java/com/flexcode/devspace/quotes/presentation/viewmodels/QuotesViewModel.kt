@@ -5,16 +5,15 @@ import com.flexcode.devspace.core.utils.Resource
 import com.flexcode.devspace.quotes.domain.models.Quotes
 import com.flexcode.devspace.quotes.domain.usecases.GetAllQuotesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
 @HiltViewModel
 class QuotesViewModel @Inject constructor(
     private val getAllQuotesUseCase: GetAllQuotesUseCase
 ) : ViewModel() {
 
-    fun getAllQuotes() : Flow<Resource<List<Quotes>>> {
+    fun getAllQuotes(): Flow<Resource<List<Quotes>>> {
         return getAllQuotesUseCase.invoke()
     }
-
 }

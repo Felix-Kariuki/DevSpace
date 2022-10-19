@@ -7,17 +7,17 @@ import com.flexcode.devspace.quotes.data.mapper.toEntity
 import com.flexcode.devspace.quotes.data.remote.QuotesApi
 import com.flexcode.devspace.quotes.domain.models.Quotes
 import com.flexcode.devspace.quotes.domain.repository.GetAllQuotesRepository
+import java.io.IOException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
-import java.io.IOException
 
 class GetAllQuotesRepositoryImpl(
     private val dao: QuotesDao,
-    private val api : QuotesApi
+    private val api: QuotesApi
 ) : GetAllQuotesRepository {
 
-    override fun getAllQuotes(): Flow<Resource<List<Quotes>>> = flow{
+    override fun getAllQuotes(): Flow<Resource<List<Quotes>>> = flow {
 
         emit(Resource.Loading())
 
@@ -28,15 +28,14 @@ class GetAllQuotesRepositoryImpl(
             val remoteQuotes = api.getAllQuotes()
             dao.deleteQuotes()
             dao.insertQuotes(remoteQuotes.map { it.toEntity() })
-
-        }catch (e: HttpException) {
+        } catch (e: HttpException) {
             emit(
                 Resource.Error(
                     message = "Something went wrong",
                     data = quotesFromCache
                 )
             )
-        }catch (e: IOException){
+        } catch (e: IOException) {
             emit(
                 Resource.Error(
                     message = "ERROR!!, check your internet connection!",

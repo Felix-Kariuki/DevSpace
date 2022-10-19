@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetAllQuotesRepository {
 
-    fun  getAllQuotes() : Flow<Resource<List<Quotes>>>
+    fun getAllQuotes(): Flow<Resource<List<Quotes>>>
 }

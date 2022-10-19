@@ -16,5 +16,5 @@ interface QuotesDao {
     suspend fun deleteQuotes()
 
     @Query("SELECT * FROM quotesentity")
-    suspend fun getAllQuotes() : List<QuotesEntity>
+    suspend fun getAllQuotes(): List<QuotesEntity>
 }

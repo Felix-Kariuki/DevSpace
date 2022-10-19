@@ -1,6 +1,5 @@
 package com.flexcode.devspace.github.presentation.adapters
 
-import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,36 +7,32 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.flexcode.devspace.R
-import com.flexcode.devspace.core.utils.Constants
 import com.flexcode.devspace.databinding.LayoutRepositoryBinding
 import com.flexcode.devspace.github.domain.model.Repository
-import javax.inject.Inject
 
-class RepositoriesAdapter(private val onClickListener  : OnClickListener) :
-    ListAdapter<Repository,RepositoriesAdapter.MyViewHolder>(COMPARATOR){
+class RepositoriesAdapter(private val onClickListener: OnClickListener) :
+    ListAdapter<Repository, RepositoriesAdapter.MyViewHolder>(COMPARATOR) {
 
+    inner class MyViewHolder(private val binding: LayoutRepositoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(repo: Repository?) {
+            binding.apply {
+                Glide.with(binding.root)
+                    .load(repo?.owner?.avatar_url)
+                    .placeholder(R.drawable.ic_placeholder)
+                    .into(ivRepoOwner)
 
-        inner class MyViewHolder(private val binding : LayoutRepositoryBinding) :
-                RecyclerView.ViewHolder(binding.root){
-                    fun bind(repo:Repository?){
-                        binding.apply {
-                            Glide.with(binding.root)
-                                .load(repo?.owner?.avatar_url)
-                                .placeholder(R.drawable.ic_placeholder)
-                                .into(ivRepoOwner)
-
-                            tvRepoDescription.text = repo?.description
-                            tvRepoName.text = repo?.name
-                            tvRepoLanguage.text = repo?.language
-                            tvRepoStar.text = repo?.stargazers_count.toString()
-                            tvRepoUserName.text = repo?.owner?.login
-                            /**
-                             * get login to owner to display as name
-                             */
-                        }
-                    }
-                }
-
+                tvRepoDescription.text = repo?.description
+                tvRepoName.text = repo?.name
+                tvRepoLanguage.text = repo?.language
+                tvRepoStar.text = repo?.stargazers_count.toString()
+                tvRepoUserName.text = repo?.owner?.login
+                /**
+                 * get login to owner to display as name
+                 */
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
@@ -49,8 +44,6 @@ class RepositoriesAdapter(private val onClickListener  : OnClickListener) :
         )
     }
 
-
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val repo = getItem(position)
         holder.bind(repo)
@@ -60,9 +53,8 @@ class RepositoriesAdapter(private val onClickListener  : OnClickListener) :
         }
     }
 
-
-    companion object{
-        private val COMPARATOR = object :DiffUtil.ItemCallback<Repository>(){
+    companion object {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<Repository>() {
             override fun areItemsTheSame(oldItem: Repository, newItem: Repository): Boolean {
                 return oldItem.id == newItem.id
             }

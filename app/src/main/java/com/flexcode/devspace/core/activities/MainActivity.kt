@@ -1,8 +1,8 @@
 package com.flexcode.devspace.core.activities
 
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         checkTheme()
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer) as
-                NavHostFragment
+            NavHostFragment
         navController = navHostFragment.findNavController()
 
         binding.bottomNavigationView.apply { setupWithNavController(navController) }
@@ -50,8 +50,6 @@ class MainActivity : AppCompatActivity() {
                 else binding.bottomNavigationView.isGone = true
             }
         }
-
-
     }
 
     private fun checkTheme() {
@@ -63,5 +61,4 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
     }
-
 }

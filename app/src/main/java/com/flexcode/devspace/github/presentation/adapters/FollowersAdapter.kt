@@ -11,25 +11,25 @@ import com.flexcode.devspace.databinding.LayoutFollowersBinding
 import com.flexcode.devspace.github.domain.model.Followers
 
 class FollowersAdapter(private val onClickListener: OnClickListener) :
-    ListAdapter<Followers,FollowersAdapter.MyViewHolder>(COMPARATOR) {
+    ListAdapter<Followers, FollowersAdapter.MyViewHolder>(COMPARATOR) {
 
     inner class MyViewHolder(private val binding: LayoutFollowersBinding) :
-            RecyclerView.ViewHolder(binding.root){
-                fun bind(follower: Followers?){
-                    binding.apply {
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(follower: Followers?) {
+            binding.apply {
                         /*ivFollowerImage.load("${follower?.avatar_url}"){
                             crossfade(true)
                             placeholder(R.drawable.ic_placeholder)
                             transformations(CircleCropTransformation())
                         }*/
-                        Glide.with(binding.root)
-                            .load(follower?.avatar_url)
-                            .placeholder(R.drawable.ic_placeholder)
-                            .into(ivFollowerImage)
-                        tvFollowerUserName.text = follower?.login
-                    }
-                }
+                Glide.with(binding.root)
+                    .load(follower?.avatar_url)
+                    .placeholder(R.drawable.ic_placeholder)
+                    .into(ivFollowerImage)
+                tvFollowerUserName.text = follower?.login
             }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
@@ -41,7 +41,6 @@ class FollowersAdapter(private val onClickListener: OnClickListener) :
         )
     }
 
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val follower = getItem(position)
         holder.bind(follower)
@@ -51,8 +50,8 @@ class FollowersAdapter(private val onClickListener: OnClickListener) :
         }
     }
 
-    companion object{
-        private val COMPARATOR = object : DiffUtil.ItemCallback<Followers>(){
+    companion object {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<Followers>() {
             override fun areItemsTheSame(oldItem: Followers, newItem: Followers): Boolean {
                 return oldItem.id == newItem.id
             }

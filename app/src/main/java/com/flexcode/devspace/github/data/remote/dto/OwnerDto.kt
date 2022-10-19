@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class OwnerDto(
     val avatar_url: String?,
-    val login : String?,
+    val login: String?,
 )

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class GetAllQuotesUseCase(private val repository: GetAllQuotesRepository) {
 
-    operator fun invoke(): Flow<Resource<List<Quotes>>>{
+    operator fun invoke(): Flow<Resource<List<Quotes>>> {
         return repository.getAllQuotes()
     }
 }

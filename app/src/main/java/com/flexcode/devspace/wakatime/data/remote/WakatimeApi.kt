@@ -9,7 +9,5 @@ interface WakatimeApi {
     @GET("/api/v1/editors")
     suspend fun getEditors(
         @Header("Authorization") token: String
-    ) : EditorsResponseDto
-
-
+    ): EditorsResponseDto
 }

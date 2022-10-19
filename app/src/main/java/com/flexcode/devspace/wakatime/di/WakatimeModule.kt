@@ -13,19 +13,18 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object WakatimeModule {
 
-
     @Provides
     @Singleton
-    fun providesWakatimeApi(okHttpClient: OkHttpClient): WakatimeApi{
+    fun providesWakatimeApi(okHttpClient: OkHttpClient): WakatimeApi {
         return Retrofit.Builder()
             .baseUrl(Constants.WAKATIME_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -37,7 +36,7 @@ object WakatimeModule {
     @Singleton
     @Provides fun providesWakatimeDatabase(
         @ApplicationContext context: Context
-    ): WakatimeDatabase{
+    ): WakatimeDatabase {
         return Room.databaseBuilder(
             context,
             WakatimeDatabase::class.java,
@@ -51,16 +50,16 @@ object WakatimeModule {
     fun providesGetEditorsRepository(
         database: WakatimeDatabase,
         api: WakatimeApi
-    ): GetEditorsRepository{
+    ): GetEditorsRepository {
         return GetEditorsRepositoryImpl(
-           api=api,
-           dao = database.editorsDao
+            api = api,
+            dao = database.editorsDao
         )
     }
 
     @Provides
     @Singleton
-    fun providesGetEditorsUseCase(repository: GetEditorsRepository) : GetEditorsUseCase{
+    fun providesGetEditorsUseCase(repository: GetEditorsRepository): GetEditorsUseCase {
         return GetEditorsUseCase(
             repository
         )

@@ -1,11 +1,11 @@
 package com.flexcode.devspace.wakatime.presentation.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.flexcode.devspace.R
@@ -22,14 +22,14 @@ class WakatimeFragment : Fragment(R.layout.fragment_wakatime) {
     private var _binding: FragmentWakatimeBinding? = null
     private val binding get() = _binding!!
     private lateinit var editorsAdapter: EditorsAdapter
-    private val getEditorsViewModel : GetEditorsViewModel by viewModels()
+    private val getEditorsViewModel: GetEditorsViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWakatimeBinding.inflate(inflater,container,false)
-
+        _binding = FragmentWakatimeBinding.inflate(inflater, container, false)
 
         editorsAdapter = EditorsAdapter()
 
@@ -45,19 +45,17 @@ class WakatimeFragment : Fragment(R.layout.fragment_wakatime) {
     private fun getEditors() {
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             val token = "mF_9.B5f-4.1JqM"
-            getEditorsViewModel.getAllEditors(token ="Bearer $token").collect{result->
-                when(result){
-                    is Resource.Success->{
+            getEditorsViewModel.getAllEditors(token = "Bearer $token").collect { result ->
+                when (result) {
+                    is Resource.Success -> {
                         editorsAdapter.submitList(result.data)
                         binding.apply {
                             rvEditors.adapter = editorsAdapter
                         }
                     }
                     is Resource.Error -> {
-
                     }
-                    is Resource.Loading-> {
-
+                    is Resource.Loading -> {
                     }
                 }
             }
